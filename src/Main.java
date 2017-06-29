@@ -6,16 +6,28 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         int userNum = 0;
-        int factorial = 1;
+      
+        do {
+            int factorial = 1;
+            System.out.println("Enter a number between 1 and 10: ");
 
-        System.out.println("Enter an integer: ");
-        userNum = scan.nextInt();
+            userNum = scan.nextInt();
 
-        for (int i = 1; i <= userNum; i++) {
+            if (userNum <= 10) {
 
-            factorial = i * factorial;
+                for (int i = 1; i <= userNum; i++) {
 
-        }
-        System.out.println("The factorial of " + userNum + " is " + factorial);
+                    factorial = i * factorial;
+
+                }
+
+                System.out.println("The factorial of " + userNum + " is " + factorial);
+            }
+            if (userNum > 10) {
+                System.out.println("Invalid number entered.");
+            }
+
+
+        } while (userNum >= 0);
     }
 }
