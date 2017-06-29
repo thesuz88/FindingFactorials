@@ -6,13 +6,19 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         int userNum = 0;
-      
+        String choice = "y";
+
         do {
             int factorial = 1;
             System.out.println("Enter a number between 1 and 10: ");
 
-            userNum = scan.nextInt();
 
+            while (!scan.hasNextInt()){
+                System.out.println("Did not enter a number.");
+                System.out.println("Enter a number between 1 and 10");
+                String input = scan.nextLine();
+            }
+            userNum = scan.nextInt();
             if (userNum <= 10) {
 
                 for (int i = 1; i <= userNum; i++) {
@@ -27,7 +33,10 @@ public class Main {
                 System.out.println("Invalid number entered.");
             }
 
+            choice = scan.nextLine();
+            System.out.println("Continue? (y/n)");
+            choice = scan.nextLine();
 
-        } while (userNum >= 0);
+        } while (choice.equalsIgnoreCase("y"));
     }
 }
